@@ -13,7 +13,7 @@ const currentTimeEl = document.getElementById("currentTime");
 const durationEl = document.getElementById("duration");
 
 /* FETCH SONGS */
-fetch("http://localhost:5000/api/songs")
+fetch("https://songs-back.onrender.com/api/songs")
   .then(res => res.json())
   .then(data => {
     songs = data;
@@ -43,10 +43,10 @@ function loadSong(index) {
   title.innerText = songs[index].title;
   artist.innerText = songs[index].artist || "";
   cover.src = songs[index].cover
-    ? `http://localhost:5000/uploads/${songs[index].cover}`
+    ? `https://songs-back.onrender.com/uploads/${songs[index].cover}`
     : "";
 
-  audio.src = `http://localhost:5000/uploads/${songs[index].file}`;
+  audio.src = `https://songs-back.onrender.com/uploads/${songs[index].file}`;
   audio.play();
 
   playBtn.innerHTML = "⏸";
