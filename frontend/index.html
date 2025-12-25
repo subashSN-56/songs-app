@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Music App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <div class="sidebar">
+    <h2>🎵 MyMusic</h2>
+
+    <a href="upload.html" class="upload-btn">⬆ Upload Songs</a>
+
+    <input type="text" id="search" placeholder="Search songs...">
+    <ul id="songList"></ul>
+  </div>
+
+  <!-- PLAYER -->
+  <div class="player">
+    <img id="cover" src="" alt="cover">
+
+    <h3 id="title">Select a Song</h3>
+    <p id="artist"></p>
+
+    <!-- Progress -->
+    <input type="range" id="progress" value="0">
+
+    <!-- Time -->
+    <div class="time">
+      <span id="currentTime">0:00</span>
+      <span id="duration">0:00</span>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button onclick="prev()">⏮</button>
+      <button id="playBtn" onclick="togglePlay()">▶</button>
+      <button onclick="next()">⏭</button>
+    </div>
+  </div>
+
+</div>
+
+<audio id="audio"></audio>
+<script src="script.js"></script>
+</body>
+</html>
